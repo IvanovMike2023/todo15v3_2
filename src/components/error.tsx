@@ -3,10 +3,11 @@ import Button from '@mui/material/Button';
 import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import {useAppDispatch, useAppSelector} from "../app/store";
-import {setEntityErrorAC} from "../app/App-reducer";
+import {setAppErrorAC} from "../app/App-reducer";
 
 export default function CustomizedSnackbars() {
 const error = useAppSelector((state)=>state.app.error)
+    console.log(error)
     const dispatch=useAppDispatch()
     const handleClose = (
         event?: React.SyntheticEvent | Event,
@@ -15,7 +16,7 @@ const error = useAppSelector((state)=>state.app.error)
         if (reason === 'clickaway') {
             return;
         }
-        dispatch(setEntityErrorAC(''))
+        dispatch(setAppErrorAC(''))
     };
 
     return (

@@ -47,7 +47,7 @@ export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
                    helperText={error}
                    disabled={props.entitystatys==='loading'}
         />
-        <IconButton color="primary" onClick={addItem}>
+        <IconButton color="primary" onClick={addItem} disabled={props.entitystatys==='loading'}>
             <AddBox/>
         </IconButton>
     </div>
